@@ -1,102 +1,85 @@
 import React from "react";
-import { Heart } from "lucide-react";
+import { Heart, Flower2, Sparkles } from "lucide-react";
 
 const Footer = ({ data }) => {
   return (
-    <footer className="bg-black text-white py-24 border-t-8 border-primary-green">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-12 gap-16 mb-20">
-          <div className="md:col-span-6 space-y-8">
-            <h3 className="text-4xl font-black tracking-tighter uppercase italic">
-              Dr. Jotishko{" "}
-              <span className="text-primary-green underline decoration-4 underline-offset-8">
-                Biswas
+    <footer className="bg-black text-white py-32 border-t-[16px] border-terracotta relative overflow-hidden">
+      {/* Background Decoration */}
+      <div className="absolute bottom-[-10%] right-[-5%] text-white/5 rotate-12 select-none pointer-events-none">
+        <Flower2 size={500} />
+      </div>
+
+      <div className="zen-container relative z-10">
+        <div className="grid md:grid-cols-12 gap-24 mb-24">
+          <div className="md:col-span-12 lg:col-span-6 space-y-10">
+            <h3 className="text-5xl md:text-7xl font-black tracking-tighter uppercase italic leading-none">
+              DR. JOTISHKO <br />{" "}
+              <span className="text-sage-green underline decoration-8 underline-offset-8 decoration-white">
+                BISWAS
               </span>
             </h3>
-            <p className="text-white font-bold text-xl leading-tight uppercase opacity-70 border-l-4 border-secondary-blue pl-6">
-              Bold healing. No compromises. Reclaiming your baseline through
-              movement and grit.
+            <p className="text-white font-black text-2xl leading-tight uppercase italic opacity-80 border-l-[12px] border-terracotta pl-10 max-w-xl">
+              Equilibrium reclaimed. Movement optimized. Bold healing for the
+              modern human experience.
             </p>
-            <div className="inline-block bg-accent-yellow text-black px-6 py-2 border-2 border-white font-black uppercase italic -rotate-1 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)]">
-              Heal • Move • Breathe
+            <div className="inline-flex items-center gap-4 bg-sage-green text-black px-8 py-4 border-4 border-white font-black uppercase italic -rotate-2 shadow-[8px_8px_0px_0px_rgba(210,121,126,1)]">
+              HEAL • MOVE • BREATHE <Sparkles size={20} />
             </div>
           </div>
 
-          <div className="md:col-span-3 space-y-8">
-            <h4 className="text-2xl font-black uppercase tracking-tighter text-secondary-blue italic">
-              LINKS
+          <div className="md:col-span-6 lg:col-span-3 space-y-10">
+            <h4 className="text-3xl font-black uppercase tracking-tighter text-terracotta italic border-b-4 border-white inline-block pb-1">
+              NAVIGATE
             </h4>
-            <ul className="space-y-4 font-black uppercase text-sm tracking-widest">
-              <li>
-                <a
-                  href="#home"
-                  className="hover:text-primary-green transition-colors flex items-center gap-2"
-                >
-                  <div className="w-2 h-2 bg-white"></div> Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#about"
-                  className="hover:text-primary-green transition-colors flex items-center gap-2"
-                >
-                  <div className="w-2 h-2 bg-white"></div> About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#services"
-                  className="hover:text-primary-green transition-colors flex items-center gap-2"
-                >
-                  <div className="w-2 h-2 bg-white"></div> Services
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  className="hover:text-primary-green transition-colors flex items-center gap-2"
-                >
-                  <div className="w-2 h-2 bg-white"></div> Contact
-                </a>
-              </li>
+            <ul className="space-y-6 font-black uppercase text-lg tracking-widest italic">
+              {["Home", "About", "Services", "Contact"].map((item) => (
+                <li key={item}>
+                  <a
+                    href={`#${item.toLowerCase()}`}
+                    className="hover:text-sage-green transition-colors flex items-center gap-4 group"
+                  >
+                    <div className="w-4 h-4 bg-terracotta border-2 border-white group-hover:rotate-45 transition-transform"></div>
+                    {item}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <div className="md:col-span-3 space-y-8">
-            <h4 className="text-2xl font-black uppercase tracking-tighter text-accent-yellow italic">
-              INTEL
+          <div className="md:col-span-6 lg:col-span-3 space-y-10">
+            <h4 className="text-3xl font-black uppercase tracking-tighter text-sage-green italic border-b-4 border-white inline-block pb-1">
+              PROTOCOL
             </h4>
-            <ul className="space-y-4 font-black uppercase text-sm tracking-widest">
+            <ul className="space-y-6 font-black uppercase text-lg tracking-widest italic">
               <li>
-                <a
-                  href="#"
-                  className="hover:text-primary-green transition-colors"
-                >
-                  Privacy
+                <a href="#" className="hover:text-terracotta transition-colors">
+                  Privacy Intel
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="hover:text-primary-green transition-colors"
-                >
-                  Terms
+                <a href="#" className="hover:text-terracotta transition-colors">
+                  Path Terms
                 </a>
               </li>
-              <li className="text-white/40 italic">BPA REGISTERED</li>
+              <li className="text-white/30 not-italic tracking-[0.3em] text-xs">
+                OFFICIAL BPA ACCREDITED
+              </li>
             </ul>
           </div>
         </div>
 
-        <div className="pt-12 border-t-2 border-white/20 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="font-black uppercase text-xs tracking-[0.3em] opacity-40">
-            © {new Date().getFullYear()} Dr. Jotishko Biswas. SITE BY
-            ANTIGRAVITY.
+        <div className="pt-16 border-t-4 border-white/10 flex flex-col lg:flex-row justify-between items-center gap-12">
+          <p className="font-black uppercase text-sm tracking-[0.5em] opacity-30 text-center lg:text-left">
+            © {new Date().getFullYear()} DR. JOTISHKO BISWAS.{" "}
+            <br className="md:hidden" /> DESIGNED BY ANTIGRAVITY FOR VITALITY.
           </p>
-          <div className="flex items-center space-x-2 font-black uppercase text-xs italic bg-white text-black px-4 py-2 border-2 border-black">
-            <span>BUILT WITH</span>
-            <Heart size={14} className="text-red-500 fill-current" />
-            <span>FOR THE BOLD</span>
+          <div className="flex items-center space-x-4 font-black uppercase text-sm italic bg-white text-black px-10 py-5 border-4 border-black shadow-[8px_8px_0px_0px_rgba(134,167,137,1)]">
+            <span>EXECUTED WITH</span>
+            <Heart
+              size={20}
+              className="text-terracotta fill-terracotta animate-pulse"
+            />
+            <span>FOR THE HUMAN RACE</span>
           </div>
         </div>
       </div>

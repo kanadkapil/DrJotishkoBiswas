@@ -1,5 +1,5 @@
 import React from "react";
-import { Star, MessageSquareQuote } from "lucide-react";
+import { Star, MessageSquareQuote, Flower2, Heart } from "lucide-react";
 
 const TestimonialsSection = ({ data }) => {
   const testimonials = [
@@ -26,48 +26,64 @@ const TestimonialsSection = ({ data }) => {
   return (
     <section
       id="testimonials"
-      className="py-24 bg-white border-y-4 border-black"
+      className="py-32 bg-white border-y-8 border-black relative overflow-hidden"
     >
-      <div className="container mx-auto px-6">
-        <div className="text-center md:text-left mb-20 space-y-4">
-          <h2 className="text-xl font-black text-black uppercase tracking-[0.2em] italic">
-            INTEL
-          </h2>
-          <h3 className="text-6xl md:text-8xl font-black text-black uppercase leading-[0.8] tracking-tighter">
-            PATIENT <br />{" "}
-            <span className="bg-black text-white px-4 border-4 border-black inline-block -rotate-1">
-              FEEDBACK
-            </span>
-          </h3>
+      {/* Organic Decoration */}
+      <div className="absolute top-[20%] right-[-10%] w-[30rem] h-[30rem] bg-sage-green/5 zen-blob -z-10 -rotate-12"></div>
+
+      <div className="zen-container">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-12">
+          <div className="space-y-6">
+            <h2 className="text-2xl font-black text-black uppercase tracking-[0.3em] italic">
+              RESONANCE
+            </h2>
+            <h3 className="text-7xl md:text-9xl font-black text-black uppercase leading-[0.8] tracking-tighter">
+              HUMAN <br />{" "}
+              <span className="bg-black text-white px-8 border-8 border-black inline-block -rotate-1 shadow-[12px_12px_0px_0px_rgba(210,121,126,1)]">
+                SUCCESS
+              </span>
+            </h3>
+          </div>
+          <div className="p-8 bg-sand border-4 border-black rotate-2 hidden lg:block">
+            <p className="text-xl font-black uppercase italic leading-none">
+              Voices of <br /> restoration.
+            </p>
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-12">
           {testimonials.map((t, idx) => (
             <div
               key={idx}
-              className="bg-white border-4 border-black p-10 relative shadow-[12px_12px_0px_0px_rgba(74,222,128,1)] hover:shadow-[16px_16px_0px_0px_rgba(74,222,128,1)] transition-all group overflow-hidden"
+              className="bg-white border-8 border-black p-12 relative shadow-[16px_16px_0px_0px_rgba(134,167,137,1)] hover:shadow-[20px_20px_0px_0px_rgba(134,167,137,1)] transition-all group overflow-hidden"
             >
-              <div className="absolute top-0 left-0 p-4 bg-black text-white border-br-4 border-black">
-                <MessageSquareQuote size={32} />
+              <div className="absolute top-0 left-0 p-6 bg-black text-white border-br-8 border-black group-hover:bg-terracotta transition-colors">
+                <MessageSquareQuote size={40} />
               </div>
-              <div className="flex space-x-1 mt-8 mb-6">
+
+              <div className="flex space-x-2 mt-12 mb-10">
                 {[...Array(t.stars)].map((_, i) => (
                   <Star
                     key={i}
-                    size={20}
-                    className="fill-primary-green text-black"
+                    size={24}
+                    className="fill-terracotta text-black"
                   />
                 ))}
               </div>
-              <p className="text-black font-bold text-xl leading-snug mb-8 uppercase tracking-tight italic">
+
+              <p className="text-black font-black text-2xl leading-tight mb-12 uppercase tracking-tighter italic border-l-8 border-sand pl-8">
                 "{t.text}"
               </p>
-              <div className="pt-6 border-t-4 border-black border-dashed">
-                <p className="font-black text-2xl uppercase text-black leading-none">
+
+              <div className="pt-10 border-t-8 border-black border-dashed relative">
+                <div className="absolute -top-6 right-0 text-black/10">
+                  <Flower2 size={48} />
+                </div>
+                <p className="font-black text-3xl uppercase text-black leading-none tracking-tighter">
                   {t.name}
                 </p>
-                <p className="text-sm font-black text-black/50 uppercase tracking-widest mt-1 italic">
-                  {t.role}
+                <p className="text-sm font-black text-terracotta uppercase tracking-[0.3em] mt-3 italic flex items-center gap-2">
+                  <Heart size={14} className="fill-current" /> {t.role}
                 </p>
               </div>
             </div>

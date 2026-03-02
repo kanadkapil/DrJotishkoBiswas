@@ -38,13 +38,13 @@ function App() {
 
   if (!data)
     return (
-      <div className="flex items-center justify-center h-screen bg-background-beige text-primary-green text-2xl font-bold">
-        Loading...
+      <div className="flex items-center justify-center h-screen bg-sand text-sage-green text-2xl font-black uppercase italic">
+        Syncing energy...
       </div>
     );
 
   return (
-    <div className="min-h-screen bg-background-beige selection:bg-primary-green selection:text-white">
+    <div className="min-h-screen bg-white selection:bg-terracotta selection:text-white">
       <Navbar />
       <main>
         <Hero data={data} />

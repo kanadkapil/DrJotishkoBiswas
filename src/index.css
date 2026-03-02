@@ -1,7 +1,14 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 @theme {
   --color-primary-green: #4ade80;
+  --color-sage-green: #86a789;
+  --color-terracotta: #d2797e;
+  --color-sand: #f2ead3;
   --color-secondary-blue: #60a5fa;
   --color-background-white: #ffffff;
   --color-text-main: #111827;
@@ -14,6 +21,9 @@
 
 :root {
   --primary-green: #4ade80;
+  --sage-green: #86a789;
+  --terracotta: #d2797e;
+  --sand: #f2ead3;
   --secondary-blue: #60a5fa;
   --background-white: #ffffff;
   --text-main: #111827;
@@ -23,6 +33,7 @@ body {
   font-family: 'Inter', sans-serif;
   color: var(--text-main);
   background-color: var(--background-white);
+  @apply selection:bg-terracotta selection:text-white;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -30,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
 }
 
-/* Flat Vector Utilities */
+/* Zen Vector Utilities */
 .vector-card {
   @apply bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-200;
 }
@@ -40,11 +51,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .vector-button {
-  @apply px-6 py-3 bg-primary-green border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-black font-bold uppercase tracking-wider transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-none;
+  @apply px-8 py-4 bg-terracotta border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-white font-black uppercase tracking-widest transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-none hover:bg-black;
 }
 
 .vector-pattern {
   background-color: #ffffff;
-  background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
-  background-size: 20px 20px;
+  background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.zen-blob {
+  @apply border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)];
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+
+.zen-container {
+  @apply max-w-7xl mx-auto px-8 md:px-12 lg:px-16;
 }
