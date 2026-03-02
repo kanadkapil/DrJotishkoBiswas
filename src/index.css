@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-green: #4ade80;
+  --color-secondary-blue: #60a5fa;
+  --color-background-white: #ffffff;
+  --color-text-main: #111827;
+  --color-accent-yellow: #fbbf24;
+  
+  --shadow-flat: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  --shadow-flat-hover: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+  --border-width-bold: 2px;
+}
+
+:root {
+  --primary-green: #4ade80;
+  --secondary-blue: #60a5fa;
+  --background-white: #ffffff;
+  --text-main: #111827;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-main);
+  background-color: var(--background-white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+}
+
+/* Flat Vector Utilities */
+.vector-card {
+  @apply bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-200;
+}
+
+.vector-card:hover {
+  @apply translate-x-[-2px] translate-y-[-2px] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)];
+}
+
+.vector-button {
+  @apply px-6 py-3 bg-primary-green border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-black font-bold uppercase tracking-wider transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-none;
+}
+
+.vector-pattern {
+  background-color: #ffffff;
+  background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+  background-size: 20px 20px;
+}
